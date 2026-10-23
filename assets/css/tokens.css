@@ -11,7 +11,7 @@
   --z-base: 1; --z-raised: 10; --z-dropdown: 100; --z-sticky: 200; --z-sticky-nav: 300; --z-modal: 400; --z-toast: 500; --z-tooltip: 600;
   --masthead-h: 154px;
   /* paper: slate tipis ke arah hue navy brand */
-  --color-paper: oklch(96.5% 0.008 255); --color-paper-2: oklch(93% 0.011 255); --color-paper-3: oklch(88.5% 0.014 255);
+  --color-paper: oklch(94.5% 0.010 255); --color-paper-2: oklch(91% 0.012 255); --color-paper-3: oklch(86.5% 0.015 255);
   --color-sheet: oklch(98.6% 0.004 255);
   /* ink: navy brand #17233D */
   --color-ink: oklch(26% 0.052 264); --color-ink-2: oklch(33% 0.045 262); --color-muted: oklch(47% 0.03 258);
