@@ -5,7 +5,7 @@
   --text-xs: 0.875rem; --text-sm: 1rem; --text-md: 1.125rem; --text-lg: 1.3125rem; --text-xl: 1.625rem; --text-2xl: 2rem; --text-3xl: 2.5rem;
   --text-display: clamp(2.375rem, 2.6vw + 1.25rem, 3.875rem);
   --text-section: clamp(1.875rem, 1.6vw + 1.125rem, 2.75rem); --text-title: clamp(1.3125rem, 0.6vw + 1rem, 1.625rem); --text-lead: clamp(1.1875rem, 0.3vw + 1.05rem, 1.375rem);
-  --text-figure: clamp(2rem, 1.8vw + 1.2rem, 3rem);
+  --text-figure: clamp(2rem, 1.8vw + 1.2rem, 3rem); --text-hero-figure: clamp(2.5rem, 3.2vw + 1rem, 4.5rem);
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1); --ease-in: cubic-bezier(0.7, 0, 0.84, 0); --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
   --dur-micro: 120ms; --dur-short: 220ms; --dur-long: 420ms;
   --color-error: oklch(52% 0.19 27); --color-success: oklch(46% 0.12 150);

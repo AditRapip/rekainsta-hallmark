@@ -44,7 +44,7 @@
       <div class="container hero__grid">
         <div class="hero__text">
           <h1 id="hero-title" data-i18n="heroTitle">Yang menghambat usaha Anda, kami bereskan.</h1>
-          <p class="lead" data-i18n="heroBody">Proses kredit 55 hari jadi 22, dan 900.000 pendaftar dilayani tanpa tumbang.</p>
+          <p class="lead" data-i18n="heroBody">Caranya sama untuk usaha Anda: pahami masalahnya, coba prototipenya, baru putuskan.</p>
           <div class="actions">
             <a class="btn btn--primary" href="#contact" data-i18n="heroCta2">Ceritakan masalah Anda</a>
             <a class="btn" href="#try" data-i18n="heroCta">Coba prototipenya</a>
@@ -77,9 +77,9 @@
           <div class="results-box">
             <p class="label" data-i18n="sResult">Hasilnya</p>
             <dl class="results">
-              <div><dt data-i18n="s1t1V">22 hari</dt><dd data-i18n="s1t1L">per pengajuan kredit, dari 55 hari sebelumnya</dd></div>
+              <div><dt class="is-small" data-i18n="s1t1V">22 hari</dt><dd data-i18n="s1t1L">per pengajuan kredit, dari 55 hari sebelumnya</dd></div>
               <div><dt data-i18n="s1t2V">2,4 hari</dt><dd data-i18n="s1t2L">persetujuan pendana, dari 9,1 hari sebelumnya</dd></div>
-              <div><dt data-i18n="s1t3V">Rp 230 miliar</dt><dd data-i18n="s1t3L">pembiayaan tersalur ke pembudidaya</dd></div>
+              <div><dt class="is-small" data-i18n="s1t3V">Rp 230 miliar</dt><dd data-i18n="s1t3L">pembiayaan tersalur ke pembudidaya</dd></div>
               <div><dt data-i18n="s1t4V">10.000+</dt><dd data-i18n="s1t4L">pembudidaya jadi pelanggan</dd></div>
             </dl>
           </div>
@@ -267,8 +267,8 @@
           <p data-i18n="contactNote">Tanpa komitmen. Tidak ada penawaran di percakapan pertama.</p>
           <dl class="facts">
             <div><dt data-i18n="cWa">WhatsApp / telepon</dt><dd><a class="facts__big" data-site="wa" href="https://wa.me/6281223960797" target="_blank" rel="noopener">0812-2396-0797</a></dd></div>
-            <div><dt data-i18n="cEmail">Email</dt><dd><a data-site="email" href="#"></a></dd></div>
-            <div><dt data-i18n="cLegal">Badan hukum</dt><dd><span class="fill" data-site="legal"></span><small data-site="city"></small></dd></div>
+            <div data-hide-empty="email"><dt data-i18n="cEmail">Email</dt><dd><a data-site="email" href="#"></a></dd></div>
+            <div data-hide-empty="legal"><dt data-i18n="cLegal">Badan hukum</dt><dd><span class="fill" data-site="legal"></span><small data-site="city"></small></dd></div>
           </dl>
         </div>
         <form id="leadForm" class="form">
@@ -305,7 +305,7 @@
       </nav>
       <div class="footer__line">
         <span data-i18n="footer">Produk, sistem, dan AI. Berangkat dari masalah yang penting.</span>
-        <span>© <span id="year"></span> RekaInsta, <span class="fill" data-site="legal"></span></span>
+        <span>© <span id="year"></span> RekaInsta<span data-hide-empty="legal">, <span data-site="legal"></span></span></span>
       </div>
     </div>
   </footer>
@@ -502,7 +502,7 @@
     /* Hallmark redesign: kunci teks yang diubah atau ditambah. Baris aslinya tetap ada di objek copy di atas. */
     Object.assign(copy.id, {
       heroTitle: 'Yang menghambat usaha Anda, kami bereskan.',
-      heroBody: 'Proses kredit 55 hari jadi 22, dan 900.000 pendaftar dilayani tanpa tumbang.',
+      heroBody: 'Caranya sama untuk usaha Anda: pahami masalahnya, coba prototipenya, baru putuskan.',
       footer: 'Produk, sistem, dan AI. Berangkat dari masalah yang penting.',
       fEmail: 'Alamat email (opsional)',
       visitSite: 'Lihat situsnya',
@@ -516,7 +516,7 @@
     });
     Object.assign(copy.en, {
       heroTitle: 'What holds your business back, we fix.',
-      heroBody: 'A 55-day credit process cut to 22, and 900,000 applicants served without downtime.',
+      heroBody: 'For your business the method is the same: understand the problem, try the prototype, then decide.',
       footer: 'Products, systems and AI. Built around the problem that matters.',
       fEmail: 'Email (optional)',
       visitSite: 'Visit the live site',
@@ -577,6 +577,7 @@
     const L = () => (lang === 'id' ? 1 : 0);
     const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
     const POS = { 'object-top': '50% 0%' };
+    const POS_KEY = { spmb: '0% 0%' };
     const DIM = {
       'assets/case-studies/spmb-jawa-barat.jpg': [1440, 800], 'assets/case-studies/monica-lpg.jpg': [1280, 666],
       'assets/case-studies/bkpm-assistant.jpg': [761, 1600], 'assets/case-studies/focus-nusantara.jpg': [1536, 941],
@@ -596,7 +597,7 @@
       const u = UI[lang], i = L();
       document.getElementById('caseGrid').innerHTML = CASES.map(c => {
         const lockup = c.logo ? `<p class="case__lockup"><img src="${c.logo}" alt="${esc(c.logoAlt)}" width="320" height="80" loading="lazy" decoding="async">${c.logoLabel ? `<span class="case__logoword">${esc(c.logoLabel)}</span>` : ''}</p>` : '';
-        const media = c.img ? `<div class="case__media"><img src="${c.img}" alt="${esc(c.alt)}" ${dim(c.img)} loading="lazy" decoding="async" style="object-position:${POS[c.pos] || '50% 50%'}"></div>` : '';
+        const media = c.img ? `<div class="case__media"><img src="${c.img}" alt="${esc(c.alt)}" ${dim(c.img)} loading="lazy" decoding="async" style="object-position:${POS_KEY[c.key] || POS[c.pos] || '50% 50%'}"></div>` : '';
         const cats = (c.cats || []).map(t => `<span>${TAGS[t]}</span>`).join('');
         const who = c.team.map(t => person(t[0], t[1 + i])).join('');
         const partner = c.partner ? `<li class="people__note">${u.partner}</li>` : '';
@@ -672,6 +673,9 @@
         else { el.removeAttribute('href'); el.classList.add('fill'); }
       });
       document.querySelectorAll('[data-site="wa"]').forEach(el => { el.textContent = SITE.phone; el.href = 'https://wa.me/' + SITE.wa; });
+      const legalReady = SITE.legal && !SITE.legal.includes('[');
+      document.querySelectorAll('[data-hide-empty="legal"]').forEach(el => { el.hidden = !legalReady; });
+      document.querySelectorAll('[data-hide-empty="email"]').forEach(el => { el.hidden = !SITE.email; });
       document.querySelectorAll('[data-site="wa-num"]').forEach(el => { el.textContent = SITE.phone; });
       document.querySelectorAll('[data-wa-link]').forEach(el => { el.href = 'https://wa.me/' + SITE.wa; });
       const sel = document.getElementById('serviceSelect');
