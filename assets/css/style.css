@@ -262,11 +262,12 @@ select.input { appearance: none; padding-right: var(--space-xl); }
 
 /* layar sedang dan kecil: semua ditumpuk sesuai urutan baca */
 @media (max-width: 72rem) {
-  .nav { display: none; }
-  .topbar__row { justify-content: space-between; }
+  .topbar__row { flex-wrap: wrap; justify-content: space-between; row-gap: 0; padding-top: var(--space-xs); }
+  .nav { order: 3; flex: 1 0 100%; margin: 0 calc(-1 * var(--gutter)); padding: 0 var(--gutter); overflow-x: auto; scrollbar-width: none; border-top: var(--rule-hair) solid var(--color-rule); gap: var(--space-lg); }
+  .nav::-webkit-scrollbar { display: none; }
 }
 @media (max-width: 60rem) {
-  html { scroll-padding-top: 80px; }
+  html { scroll-padding-top: 128px; }
   .hero__grid, .story, .can__grid, .row, .rows__head, .gets-box, .proto--live, .try-foot, .ai-box, .faq-grid, .contact, .footer__grid, .case, .case--logo, .tracks, .steps, .members, .gets { grid-template-columns: minmax(0, 1fr); }
   .member { grid-template-rows: none; }
   .soon li { grid-template-columns: minmax(0, 1fr); gap: var(--space-xs); }
